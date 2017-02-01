@@ -14,7 +14,8 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
-  background-color: #485274;
+  /*background-color: #485274;*/
+  background: #7F82C5;
 }
 
 a {
@@ -430,6 +431,6 @@ main.nav-is-visible {
   }
   main h1 {
     font-size: 3.6rem;
-    margin: 4em auto;
+    /*margin: 4em auto;*/
   }
 }

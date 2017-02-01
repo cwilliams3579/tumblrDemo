@@ -1,25 +1,20 @@
 <div class="container-fluid text-center">
-
+  <br><br>
   <!-- Post Row -->
   <div class="row">
     <img class="img-circle img-responsive img-center" src="/assets/male.svg" alt="" style="width:150px; margin:0 auto;">
     <hr>
-    <h2 class="title text-center"><%= @post.title %><br>
-      <small class="text-center">Submitted <%= time_ago_in_words(@post.created_at) %> ago</small><hr>
-      <p class="body"><%= @post.body %></p><br>
+    <h2 class="title text-center">
+      <strong><%= comment.name %><br></strong>
+      <p class="body"><%= comment.content %></p><br>
+      <small class="text-center">Submitted <%= time_ago_in_words(@post.created_at) %> ago</small><br>
     </h2>
-
-    <div id="comments">
-      <h2><%= @post.comments.count %> Comments</h2>
-      <hr>
-      <%= render @post.comments %>
-      <%= render 'comments/form' %>
-    </div>
     <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
     <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %><br>
     <div class="text-center">
       <%= link_to "Back", posts_path, class: "btn btn-link btn-sm" %>
     </div>
+    <hr>
   </div>
 </div>
 <!-- /.container -->
