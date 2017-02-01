@@ -1,0 +1,48 @@
+
+  <%# if @post.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4><%#= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h4>
+
+      <ul>
+      <%# @post.errors.full_messages.each do |message| %>
+        <li><%#= message %></li>
+      <%# end %>
+      </ul>
+    </div>
+  <%# end %>
+
+<form action="/posts" method="post" class="form-horizontal">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<fieldset>
+
+<!-- Form Name -->
+<legend>New Post</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="title">Title</label>
+  <div class="col-md-4">
+  <input id="title" name="post[title]" type="text" placeholder="Description" class="form-control input-md">
+
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="body">Description</label>
+  <div class="col-md-4">
+    <textarea class="form-control" id="body" name="post[body]"></textarea>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </div>
+</div>
+
+</fieldset>
+</form>
