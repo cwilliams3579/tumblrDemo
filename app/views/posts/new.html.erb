@@ -11,15 +11,13 @@
       </ul>
     </div>
   <% end %>
-  <br><br><br><br>
 <div class="container">
-  <form action="/posts" method="post" class="form-horizontal">
+  <form action="/posts" method="post" class="form-horizontal wow rollIn">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <fieldset>
 
   <!-- Form Name -->
-  <h2 class="text-center">New Post</h2>
-  <br><br><br>
+  <h1 class="text-center">New Post</h1>
   <!-- Text input-->
   <div class="form-group">
     <label class="col-md-4 control-label" for="title">Title</label>
@@ -41,7 +39,7 @@
   <div class="form-group">
     <label class="col-md-4 control-label" for=""></label>
     <div class="col-md-4">
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-primary btn-block" value="Submit">
     </div>
   </div>
 

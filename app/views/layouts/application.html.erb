@@ -16,7 +16,6 @@
   </head>
   <body>
         <%= render 'layouts/messages' %>
-        <%#= render 'layouts/navigation' %>
         <header class="cd-header wow fadeInLeftBig">
           <a href="#0" class="cd-logo"><img src="assets/male.svg" alt="Logo"></a>
           <a href="#0" class="cd-3d-nav-trigger">
@@ -28,6 +27,7 @@
           <!-- all your content here -->
 
           <%= yield %>
+          <%= render 'layouts/footer' %>
         </main>
         <nav class="cd-3d-nav-container">
           <ul class="cd-3d-nav">
