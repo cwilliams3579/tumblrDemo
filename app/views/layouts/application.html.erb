@@ -17,38 +17,41 @@
   <body>
         <%= render 'layouts/messages' %>
         <header class="cd-header wow fadeInLeftBig">
-          <a href="#0" class="cd-logo"><img src="assets/male.svg" alt="Logo"></a>
+          <a href="#0" class="cd-logo"><img src="/assets/male.svg" alt="Logo"></a>
           <a href="#0" class="cd-3d-nav-trigger">
             Menu
             <span></span>
           </a>
         </header> <!-- .cd-header -->
-        <main>
+        <main style="height:500px;"><br>
           <!-- all your content here -->
-
           <%= yield %>
-          <%= render 'layouts/footer' %>
+          <br>
         </main>
+        <%#= render 'layouts/footer' %>
         <nav class="cd-3d-nav-container">
           <ul class="cd-3d-nav">
             <li class="cd-selected">
               <a href="/">Dashboard</a>
+              <a href="#dashboard">Dashboard</a>
             </li>
             <li>
-              <a href="#portfolio">Portfolio</a>
+              <%= link_to "Feeds", posts_path %>
+              <%= link_to "Feeds" %>
             </li>
             <li>
               <%= link_to "New Post", new_post_path %>
+              <%= link_to "New Post" %>
             </li>
             <li>
               <a href="#about">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a href="#contact">Settings</a>
+              <a href="#settings">Settings</a>
+              <%#= link_to "Edit", edit_post_path(@post) %>
             </li>
-            <li>
-              <a href="#contact">Settings</a>
-            </li>
+
           </ul> <!-- .cd-3d-nav -->
 
           <span class="cd-marker color-1"></span>

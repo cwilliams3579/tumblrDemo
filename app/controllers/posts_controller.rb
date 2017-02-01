@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  expose :posts, ->{ Post.all }
+  expose :post
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -21,20 +23,28 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
   def show
     @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post)
+      flash[:notice] = "Post was successfully updated"
+      redirect_to posts_path
     else
-      render :edit
+      render 'edit'
     end
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
+    flash[:danger] = "Post have been deleted"
     redirect_to posts_path
   end
 

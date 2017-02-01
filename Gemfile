@@ -12,6 +12,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'decent_exposure'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -23,16 +24,20 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'bourbon', '~> 4.2', '>= 4.2.7'
 gem 'high_voltage'
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end
 group :development, :test do
   gem 'sqlite3'
+  gem 'hirb'
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
