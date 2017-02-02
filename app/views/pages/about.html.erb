@@ -1,7 +1,11 @@
 <% content_for :title do %>About<% end %>
-<h3>About the Website</h3>
-<p>
-This web application was created with
-<%= link_to('Rails Composer', 'http://railsapps.github.io/rails-composer/') %>
-from the <%= link_to('RailsApps project', 'http://railsapps.github.io/') %>.
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= image_tag "https://avatars1.githubusercontent.com/u/19493521?v=3&s=460" %><br>
+    </div>
+  </div>
+
+  <p>Created with love in Ruby on Rails</p>
+  By <%= link_to('Cleveland Williams', 'http://www.github.com/cwilliams3579/', class: "text-center", target: "_blank") %>.
+</div>

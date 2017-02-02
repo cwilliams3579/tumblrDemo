@@ -15,7 +15,6 @@
     </script>
   </head>
   <body>
-        <%= render 'layouts/messages' %>
         <header class="cd-header wow fadeInLeftBig">
           <a href="#0" class="cd-logo"><img src="/assets/male.svg" alt="Logo"></a>
           <a href="#0" class="cd-3d-nav-trigger">
@@ -23,35 +22,39 @@
             <span></span>
           </a>
         </header> <!-- .cd-header -->
-        <main style="height:500px;"><br>
+        <main style="height:467px;">
+          <%= render 'layouts/messages' %>
           <!-- all your content here -->
           <%= yield %>
-          <br>
-          <%#= render 'layouts/footer' %>
+
         </main>
+        <a href="javascript:void(0);" id="rocketmeluncur" class="showrocket" ><i></i></a>
         <nav class="cd-3d-nav-container">
           <ul class="cd-3d-nav">
             <li class="cd-selected">
-              <a href="/">Dashboard</a>
-              <a href="#dashboard">Dashboard</a>
+              <%= link_to "Dashboard", root_path %>
             </li>
             <li>
               <%= link_to "Feeds", posts_path %>
-              <%= link_to "Feeds" %>
             </li>
             <li>
               <%= link_to "New Post", new_post_path %>
-              <%= link_to "New Post" %>
             </li>
             <li>
-              <a href="#about">About</a>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#settings">Settings</a>
-              <%#= link_to "Edit", edit_post_path(@post) %>
+              <a href="/pages/about">About</a>
             </li>
 
+            <li>
+              <% if user_signed_in? %>
+                <a href="#">Profile</a>
+                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              </li>
+              <li>
+                <% else %>
+                  <%= link_to "Sign Up", new_user_registration_path %>
+                  <%= link_to "Sign In", new_user_session_path %>
+                <% end %>
+            </li>
           </ul> <!-- .cd-3d-nav -->
 
           <span class="cd-marker color-1"></span>

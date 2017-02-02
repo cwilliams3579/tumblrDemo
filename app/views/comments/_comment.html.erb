@@ -8,9 +8,12 @@
       <strong><%= comment.name %><br></strong>
       <p class="body"><%= comment.content %></p><br>
       <small class="text-center">Submitted <%= time_ago_in_words(@post.created_at) %> ago</small><br>
+
     </h2>
-    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
-    <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %><br>
+    <% if !user_signed_in? %>
+      <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-primary" %>
+      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger"  %><br>
+    <% end %>
     <div class="text-center">
       <%= link_to "Back", posts_path, class: "btn btn-link btn-sm" %>
     </div>

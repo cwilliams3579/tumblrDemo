@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  
   expose :posts, ->{ Post.all }
   expose :post
   def index

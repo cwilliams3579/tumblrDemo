@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'decent_exposure'
+gem 'bcrypt'
+gem 'devise'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -24,7 +26,7 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem 'bourbon', '~> 4.2', '>= 4.2.7'
 gem 'high_voltage'
 group :development do
